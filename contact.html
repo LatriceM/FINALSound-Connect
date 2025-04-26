@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SoundConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-music"></i>
+                <span>SoundConnect</span>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Contact Us</h1>
+                    <div class="divider"></div>
+                    <p>Have questions or need assistance? We're here to help!</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <h2><i class="fas fa-envelope"></i> Send Us a Message</h2>
+                        
+                        <div id="form-success" class="form-success">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Thank you for your message. We'll get back to you as soon as possible!</p>
+                        </div>
+                        
+                        <form id="contactForm" onsubmit="return validateForm(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name*</label>
+                                    <input type="text" id="firstName" name="firstName" placeholder="John">
+                                    <div class="error-message" id="firstNameError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="lastName">Last Name*</label>
+                                    <input type="text" id="lastName" name="lastName" placeholder="Doe">
+                                    <div class="error-message" id="lastNameError"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address*</label>
+                                    <input type="email" id="email" name="email" placeholder="john.doe@example.com">
+                                    <div class="error-message" id="emailError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                                    <div class="error-message" id="phoneError"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City*</label>
+                                    <input type="text" id="city" name="city" placeholder="New York">
+                                    <div class="error-message" id="cityError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="zipCode">Zip Code*</label>
+                                    <input type="text" id="zipCode" name="zipCode" placeholder="10001">
+                                    <div class="error-message" id="zipCodeError"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject*</label>
+                                <select id="subject" name="subject">
+                                    <option value="">Select a subject</option>
+                                    <option value="product-inquiry">Product Inquiry</option>
+                                    <option value="service-request">Service Request</option>
+                                    <option value="technical-support">Technical Support</option>
+                                    <option value="general-question">General Question</option>
+                                </select>
+                                <div class="error-message" id="subjectError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message*</label>
+                                <textarea id="message" name="message" placeholder="How can we help you?" rows="5"></textarea>
+                                <div class="error-message" id="messageError"></div>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Subscribe to our newsletter for product updates and offers</label>
+                            </div>
+                            
+                            <button type="submit" class="btn primary-btn">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <h2>Visit Our Store</h2>
+                            
+                            <div class="contact-detail">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="detail">
+                                    <h4>Address</h4>
+                                    <p>
+                                        123 Audio Avenue<br>
+                                        Sound City, SC 12345<br>
+                                        United States
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail">
+                                <div class="icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="detail">
+                                    <h4>Phone</h4>
+                                    <p>
+                                        (555) 123-4567<br>
+                                        Mon-Fri: 9:00 AM - 6:00 PM
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="detail">
+                                    <h4>Email</h4>
+                                    <p>
+                                        info@soundconnect.com<br>
+                                        support@soundconnect.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <h2>Business Hours</h2>
+                            
+                            <div class="hours-row">
+                                <span>Monday - Friday</span>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="hours-row">
+                                <span>Saturday</span>
+                                <span>10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="hours-row">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-music"></i>
+                        <span>SoundConnect</span>
+                    </div>
+                    <p>Providing premium audio equipment and professional services for all your sound needs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Equipment Maintenance</a></li>
+                        <li><a href="services.html">Professional Consultation</a></li>
+                        <li><a href="services.html">Training Workshops</a></li>
+                        <li><a href="services.html">Equipment Calibration</a></li>
+                        <li><a href="services.html">Studio Setup</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter to receive updates and exclusive offers.</p>
+                    <form>
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> SoundConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Update footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Form validation
+        function validateForm(event) {
+            event.preventDefault();
+            
+            let isValid = true;
+            
+            // Clear previous error messages
+            const errorElements = document.querySelectorAll('.error-message');
+            errorElements.forEach(element => {
+                element.textContent = '';
+            });
+            
+            // Get form fields
+            const firstName = document.getElementById('firstName');
+            const lastName = document.getElementById('lastName');
+            const email = document.getElementById('email');
+            const city = document.getElementById('city');
+            const zipCode = document.getElementById('zipCode');
+            const subject = document.getElementById('subject');
+            const message = document.getElementById('message');
+            
+            // Validate first name
+            if (firstName.value.trim() === '') {
+                document.getElementById('firstNameError').textContent = 'First name is required';
+                isValid = false;
+            } else {
+                // Capitalize first letter
+                firstName.value = capitalizeFirstLetter(firstName.value);
+            }
+            
+            // Validate last name
+            if (lastName.value.trim() === '') {
+                document.getElementById('lastNameError').textContent = 'Last name is required';
+                isValid = false;
+            } else {
+                // Capitalize first letter
+                lastName.value = capitalizeFirstLetter(lastName.value);
+            }
+            
+            // Validate email
+            if (email.value.trim() === '') {
+                document.getElementById('emailError').textContent = 'Email is required';
+                isValid = false;
+            } else if (!isValidEmail(email.value)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                isValid = false;
+            }
+            
+            // Validate city
+            if (city.value.trim() === '') {
+                document.getElementById('cityError').textContent = 'City is required';
+                isValid = false;
+            } else {
+                // Capitalize first letter
+                city.value = capitalizeFirstLetter(city.value);
+            }
+            
+            // Validate zip code
+            if (zipCode.value.trim() === '') {
+                document.getElementById('zipCodeError').textContent = 'Zip code is required';
+                isValid = false;
+            } else if (!isValidZipCode(zipCode.value)) {
+                document.getElementById('zipCodeError').textContent = 'Please enter a valid 5-digit zip code';
+                isValid = false;
+            }
+            
+            // Validate subject
+            if (subject.value === '') {
+                document.getElementById('subjectError').textContent = 'Please select a subject';
+                isValid = false;
+            }
+            
+            // Validate message
+            if (message.value.trim() === '') {
+                document.getElementById('messageError').textContent = 'Message is required';
+                isValid = false;
+            }
+            
+            // If form is valid, display success message and reset form
+            if (isValid) {
+                document.getElementById('form-success').style.display = 'flex';
+                document.getElementById('contactForm').reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('form-success').style.display = 'none';
+                }, 5000);
+            }
+            
+            return false; // Prevent form submission
+        }
+        
+        // Helper function to capitalize first letter
+        function capitalizeFirstLetter(string) {
+            if (!string) return '';
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+        
+        // Helper function to validate email
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Helper function to validate zip code
+        function isValidZipCode(zipCode) {
+            const zipRegex = /^\d{5}(-\d{4})?$/;
+            return zipRegex.test(zipCode);
+        }
+    </script>
+</body>
+</html>
